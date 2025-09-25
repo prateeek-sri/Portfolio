@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prateek Srivastav - Minimalist Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="style.css">
+     <link rel="shortcut icon" href="image.png" type="image/x-icon">
+    
+</head>
+<body>
+
+    <div class="page-header-controls">
+        <button class="mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i> 
+        </button>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#hero-section">Home</a></li>
+                <li><a href="#about-section">About Me</a></li>
+                <li><a href="#skills-section">Skills</a></li>
+                <li><a href="#projects-section">Projects</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <header class="hero" id="hero-section">
+            <img src="https://s3.amazonaws.com/cdn.nftpricefloor/projects/v1/okay-bears.png?version=6" alt="Profile Photo of Prateek Srivastav" class="profile-pic" id="profileImage">
+            <h1 id="namePlaceholder">Prateek Srivastav</h1>
+            <p class="tagline" id="taglinePlaceholder">Full-Stack Developer | Minimalist Design Enthusiast</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/prateek-kumar-srivastav/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/prateeek-sri" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/_.prateeek_/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></i></a>
+                <a href="mailto:pankaj111sri@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </header>
+
+        <section class="content-section about" id="about-section">
+            <h2>About Me</h2>
+            <p id="aboutText1">
+                Hello! I'm Prateek Srivastav, a passionate and results-driven Web Developer with a focus on crafting high-performance, scalable web applications. My expertise lies in the focusing on clean code and user-centric design.
+            </p>
+            <p id="aboutText2">
+                I thrive in agile environments, turning complex problems into simple, elegant solutions. Outside of coding, I enjoy anime and learning new languages, constantly seeking new ways to simplify and optimize processes, both digital and real-world. Let's build something great together.
+            </p>
+        </section>
+
+        <section class="content-section skills" id="skills-section">
+            <h2>Core Skills</h2>
+            <div class="skills-list">
+                <span class="skill-tag"><i class="fab fa-js"></i> JavaScript (ES6+)</span>
+                <span class="skill-tag"><i class="fab fa-react"></i> React</span>
+                <span class="skill-tag"><i class="fab fa-node-js"></i> Node.js / Express</span>
+                <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
+                <span class="skill-tag"><i class="fas fa-database"></i> MongoDB / Atlas</span>
+                <span class="skill-tag"><i class="fab fa-github"></i> Git / GitHub</span>
+                <span class="skill-tag"><i class="fas fa-drafting-compass"></i> Minimalist UI/UX</span>
+            </div>
+        </section>
+
+        <section class="content-section projects" id="projects-section">
+            <h2>Selected Work</h2>
+            <div class="project-grid" id="projectGrid">
+                <article class="project-card">
+                    <img src="dice.png" alt="Project 1 Screenshot">
+                    <div class="project-info">
+                        <h3>Dice Game</h3>
+                        <p>A fun to play dice game built with React.js and Tailwind CSS, focusing on a clean, fun user experience.</p>
+                        <a href="https://dice-game-eight-mocha.vercel.app/" target="_blank" class="project-link">View Project &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="bunk.png" alt="Project 2 Screenshot">
+                    <div class="project-info">
+                        <h3>Should I Bunk</h3>
+                        <p>A real-time analytics dashboard using React.js and Node.js, simplifying analytics of bunk data and managing attendance.</p>
+                        <a href="https://should-i-bunk-eight.vercel.app/" target="_blank" class="project-link">View Project &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="krishi.png" alt="Project 3 Screenshot">
+                    <div class="project-info">
+                        <h3>KrishiMitra</h3>
+                        <p>A platform to help farmers recommend crops based on real-time analytical data using built Python and React.js.</p>
+                        <a href="https://sih-agro-prototype.vercel.app/" target="_blank" class="project-link">View GitHub &rarr;</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; <span id="currentYear"></span> Prateek Srivastav. Designed with Minimalism.</p>
+            <p>Email: <a href="mailto:pankaj111sri@.com" style="color: inherit;">prateek.srivastav@example.com</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

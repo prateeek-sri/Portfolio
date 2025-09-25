@@ -1,0 +1,250 @@
+ /* Minimalistic CSS Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Light Mode Colors (Original) */
+            --primary-color: #1a1a1a;
+            --secondary-color: #f5f5f5; /* Body BG */
+            --accent-color: #007bff; /* Used only for underlines, borders, and main link/icon colors */
+            --text-color: #333;
+            --light-text-color: #777;
+            --border-color: #eee;
+            --card-bg: #fff;
+            --hero-bg: var(--primary-color);
+            --hero-text: var(--secondary-color);
+            --navbar-bg: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+            --navbar-link-color: #333;
+            --navbar-link-hover: #000; /* Subtle hover: text turns black */
+            --navbar-shadow: rgba(0, 0, 0, 0.15);
+            --skill-hover-bg: #e5e5e5; /* Subtle hover for skills background */
+        }
+        
+        /* DARK MODE DEFINITIONS */
+        body.dark-mode {
+            --primary-color: #f5f5f5;
+            --secondary-color: #1a1a1a;
+            --accent-color: #8ab4f8;
+            --text-color: #e0e0e0;
+            --light-text-color: #a0a0a0;
+            --border-color: #333;
+            --card-bg: #282828;
+            --hero-bg: #000000;
+            --hero-text: #e0e0e0;
+            --navbar-bg: rgba(30, 30, 30, 0.95);
+            --navbar-link-color: #e0e0e0;
+            --navbar-link-hover: #fff; /* Subtle hover: text turns white */
+            --navbar-shadow: rgba(0, 0, 0, 0.6);
+            --skill-hover-bg: #3c3c3c;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            /* Key Change: Increased top padding for larger gap above the container */
+            padding: 60px 20px 40px 20px; 
+            position: relative; 
+            transition: background-color 0.3s, color 0.3s; 
+        }
+
+        .container {
+            width: 100%;
+            max-width: 960px;
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            padding: 0;
+            overflow: hidden;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin-top: 3%;
+        }
+        
+        /* Navigation Controls (Floating ABOVE the container) */
+        .page-header-controls {
+            position: absolute;
+            /* Key Change: Positioned at 20px from the top body edge (60px body padding - 40px of controls height) */
+            /* This centers the controls in the padding space and creates a clear gap above the container */
+            top: 20px; 
+            width: 100%;
+            max-width: 960px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0 20px; 
+            z-index: 1000;
+            margin-bottom: 50px;
+        }
+
+        /* --- Dark Mode Toggle (Top Left) --- */
+        .mode-toggle {
+            position: relative; 
+            background: var(--navbar-bg);
+            color: var(--navbar-link-color); 
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 40px; 
+            height: 40px;
+            border: none;
+            border-radius: 50%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 1px 6px var(--navbar-shadow); 
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+        
+        .mode-toggle:hover {
+            color: var(--navbar-link-hover);
+            box-shadow: 0 2px 8px var(--navbar-shadow);
+        }
+        
+        /* --- Minimalist Navbar (Top Right) --- */
+        .main-nav {
+            position: relative;
+            background-color: var(--navbar-bg);
+            border-radius: 30px;
+            padding: 4px 10px; 
+            box-shadow: 0 1px 6px var(--navbar-shadow);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--navbar-link-color);
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 8px 16px; 
+            border-radius: 30px; 
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        /* Hover and Active styles (Minimalist) */
+        .main-nav a:hover {
+            color: var(--navbar-link-hover);
+            background-color: transparent; 
+        }
+
+       
+
+        
+        /* --- Original CSS from the provided code --- */
+        
+        /* Hiding the old toggle button from the hero section */
+        .hero > .mode-toggle {
+            display: none; 
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, border-color 0.3s;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+
+        .hero { text-align: center; padding: 60px 20px; background-color: var(--hero-bg); color: var(--hero-text); position: relative; transition: background-color 0.3s, color 0.3s; }
+        .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 5px; }
+        .hero p.tagline { font-size: 1.2rem; font-weight: 300; color: var(--light-text-color); }
+        .social-links { margin-top: 25px; }
+        .social-links a { color: var(--hero-text); font-size: 1.5rem; margin: 0 10px; transition: color 0.3s ease; }
+        .social-links a:hover { color: var(--accent-color); }
+        .content-section { padding: 40px 60px; border-bottom: 1px solid var(--border-color); transition: border-color 0.3s; }
+        .content-section:last-child { border-bottom: none; }
+        h2 { font-size: 1.8rem; font-weight: 600; margin-bottom: 25px; color: var(--primary-color); position: relative; display: inline-block; transition: color 0.3s; }
+        h2::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 50%; height: 3px; background-color: var(--accent-color); transition: background-color 0.3s; }
+        .about p { font-size: 1rem; color: var(--text-color); margin-bottom: 15px; }
+
+        /* Skills Section */
+        .skills-list { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag {
+            background-color: var(--border-color);
+            color: var(--text-color);
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            display: flex; 
+            align-items: center;
+            transition: background-color 0.3s ease, color 0.3s;
+        }
+        .skill-tag i {
+            margin-right: 8px;
+            font-size: 1.1rem; 
+            color: var(--accent-color);
+            transition: color 0.3s;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--skill-hover-bg); 
+            color: var(--text-color);
+        }
+        
+        .skill-tag:hover i {
+            color: var(--accent-color); 
+        }
+
+        /* Project/Footer Styles */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .project-card { background-color: var(--secondary-color); border-radius: 6px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); }
+        .project-card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+        .project-info { padding: 20px; }
+        .project-info h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; color: var(--primary-color); }
+        .project-info p { font-size: 0.9rem; color: var(--light-text-color); margin-bottom: 15px; }
+        .project-link { text-decoration: none; color: var(--accent-color); font-weight: 600; font-size: 0.9rem; transition: opacity 0.3s; }
+        .project-link:hover { opacity: 0.8; }
+        footer { text-align: center; padding: 20px; font-size: 0.9rem; color: var(--light-text-color); background-color: var(--card-bg); transition: background-color 0.3s, color 0.3s; }
+        footer a { color: var(--text-color); text-decoration: none; }
+        
+        /* ------------------- Responsive Adjustments ------------------- */
+        @media (max-width: 990px) {
+            .page-header-controls {
+                width: 100%;
+                max-width: none;
+                padding: 0 40px; 
+            }
+        }
+        @media (max-width: 768px) {
+            .content-section { padding: 30px 20px; }
+            .hero { padding: 40px 20px; }
+            .hero h1 { font-size: 2rem; }
+            .hero p.tagline { font-size: 1rem; }
+            .main-nav { padding: 3px 8px; }
+            .main-nav ul { gap: 10px; }
+            .main-nav a { font-size: 0.8rem; padding: 6px 10px; }
+            .mode-toggle { width: 35px; height: 35px; font-size: 1rem; }
+            .page-header-controls { 
+                top: 20px; /* Reduced gap on mobile */
+                padding: 0 20px; 
+            }
+        }
+        @media (max-width: 500px) {
+            .main-nav { display: none; }
+            .page-header-controls { justify-content: flex-start; }
+        }
